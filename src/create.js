@@ -1,13 +1,13 @@
 import pkg from "pg";
-const {Client} =pkg;
+const { Client } = pkg;
 
-const client=new Client({
-    connectionString:"postgresql://chaiaurcode:chaiaurcode@localhost:5432/chaiDB"
-})
+const client = new Client({
+  connectionString: process.env.LOCALPOSTGRESQL_DB_URI,
+});
 
-async function createUserTable(){
-    await client.connect()
-    const result=await client.query(`
+async function createUserTable() {
+  await client.connect();
+  const result = await client.query(`
            CREATE TABLE users (
             id SERIAL PRIMARY KEY,
             username VARCHAR(50) UNIQUE NOT NULL,
@@ -15,8 +15,8 @@ async function createUserTable(){
             password VARCHAR(255) NOT NULL,
             created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
         );
-        `) 
-        console.log(result)
+        `);
+  console.log(result);
 }
 
-createUserTable()
+createUserTable();

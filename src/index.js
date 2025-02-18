@@ -2,8 +2,7 @@ import pkg from "pg";
 const { Client } = pkg;
 
 const client = new Client({
-  connectionString:
-    "postgresql://neondb_owner:npg_xLPC36fQhjJk@ep-sparkling-resonance-a58btd6e-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require",
+  connectionString: process.env.NEON_POSTGRESQL_DB_URI,
 });
 
 async function createUserTable() {
