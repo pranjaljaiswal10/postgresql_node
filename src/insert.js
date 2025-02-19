@@ -1,9 +1,17 @@
 import pkg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config({
+  path:"./.env"
+})
+
+
 
 const { Client } = pkg;
 
 const client = new Client({
-  connectionString: process.env.LOCALPOSTGRESQL_DB_URI,
+  connectionString:
+    "postgresql://chaiaurcode:chaiaurcode@localhost:5432/chaiDB",
 });
 
 async function insertUserInTable(username, email, password) {

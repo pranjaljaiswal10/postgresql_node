@@ -1,8 +1,16 @@
 import pkg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config({
+  path:"./.env"
+})
+
+
+
 const { Client } = pkg;
 
 const client = new Client({
-  connectionString: process.env.NEON_POSTGRESQL_DB_URI,
+  connectionString: process.env.NEON_POSTGRESQL_DB_URI
 });
 
 async function createUserTable() {
