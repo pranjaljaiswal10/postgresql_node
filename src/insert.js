@@ -29,4 +29,4 @@ async function insertUserInTable(username, email, password) {
   }
 }
 
-insertUserInTable("username2", "user2@example.com", "user_password");
+insertUserInTable("emmawilson", "emma.wilson@testmail.com", "W1lson#789");

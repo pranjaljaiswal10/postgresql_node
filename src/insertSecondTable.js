@@ -25,4 +25,4 @@ async function insertIntoTable(user_id,city,country,street,pincode) {
     }
 }
 
-insertIntoTable(1,'New York','USA','123 Broadway St','100001')
+insertIntoTable(2, "Sydney", "Australia", "9 Birch Avenue", "200001");
